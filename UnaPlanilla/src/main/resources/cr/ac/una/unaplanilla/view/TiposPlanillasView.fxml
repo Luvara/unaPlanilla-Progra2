@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import io.github.palexdev.materialfx.controls.MFXButton?>
+<?import io.github.palexdev.materialfx.controls.MFXCheckbox?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane id="AnchorPane" fx:id="root" prefHeight="400.0" prefWidth="600.0" stylesheets="@Style.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cr.ac.una.unaplanilla.controller.TiposPlanillasViewController">
+   <children>
+      <VBox alignment="CENTER" style="-fx-background-color: white;" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0">
+         <children>
+            <Label minHeight="-Infinity" prefHeight="27.0" prefWidth="117.0" text="Control Tipos Planillas" />
+            <TabPane fx:id="tabPaneTipoPlanilla" tabClosingPolicy="UNAVAILABLE" VBox.vgrow="ALWAYS">
+              <tabs>
+                <Tab fx:id="tabTipoPlanilla" text="Tipo Planilla">
+                  <content>
+                   <VBox minHeight="-Infinity" minWidth="-Infinity" prefHeight="256.0" prefWidth="553.0" spacing="20.0" style="-fx-background-color: white;">
+                           <children>
+                              <HBox alignment="CENTER" maxWidth="1.7976931348623157E308">
+                                 <children>
+                                    <TextField fx:id="txtId" onKeyPressed="#OnKeyPressedIdPlanilla" prefHeight="25.0" prefWidth="265.0" promptText="Id" />
+                                    <Pane maxHeight="-Infinity" prefWidth="29.0" HBox.hgrow="ALWAYS" />
+                                    <MFXCheckbox fx:id="chkActivo" prefHeight="28.0" prefWidth="92.0" text="Activo" />
+                                 </children>
+                                 <VBox.margin>
+                                    <Insets />
+                                 </VBox.margin>
+                              </HBox>
+                              <TextField fx:id="txtCodigo" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="285.0" promptText="Código" />
+                              <TextField fx:id="txtDescripcion" prefHeight="25.0" prefWidth="309.0" promptText="Descripción" />
+                              <TextField fx:id="txtPlanillasMes" maxWidth="-Infinity" prefHeight="25.0" prefWidth="272.0" promptText="Planilla x mes" />
+                           </children>
+                           <padding>
+                              <Insets bottom="20.0" left="20.0" right="20.0" top="40.0" />
+                           </padding>
+                        </VBox>
+                  </content>
+                </Tab>
+                <Tab fx:id="tbpInclusionEmpleados" onSelectionChanged="#selectionChangeTabEmp" text="Inclusion Empleados">
+                  <content>
+                    <VBox minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="538.0">
+                           <children>
+                              <HBox alignment="BOTTOM_CENTER" minHeight="-Infinity" prefHeight="55.0" prefWidth="760.0" spacing="10.0">
+                                 <children>
+                                    <TextField fx:id="txtIdEmpleado" onKeyPressed="#OnKeyPressedIdEmpleado" promptText="Id empleado" />
+                                    <TextField fx:id="txtNombre" promptText="Nombre" HBox.hgrow="ALWAYS" />
+                                    <MFXButton fx:id="btnAgregarEmpleado" contentDisplay="GRAPHIC_ONLY" minHeight="-Infinity" minWidth="-Infinity" onAction="#OnActionBtnAgregarEmpleado" prefHeight="35.0" prefWidth="35.0">
+                                       <graphic>
+                                          <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../resources/media/Agregar-48.png" />
+                                             </image>
+                                          </ImageView>
+                                       </graphic>
+                                    </MFXButton>
+                                 </children>
+                                 <VBox.margin>
+                                    <Insets />
+                                 </VBox.margin>
+                                 <padding>
+                                    <Insets bottom="5.0" />
+                                 </padding>
+                              </HBox>
+                              <Label prefHeight="30.0" text="Lista Empleados" />
+                              <Separator prefWidth="200.0" style="-fx-background-color: black;" />
+                              <TableView fx:id="tbvEmpleados" editable="true" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="156.0" prefWidth="540.0" tableMenuButtonVisible="true" VBox.vgrow="ALWAYS">
+                                <columns>
+                                  <TableColumn fx:id="tbcCodigo" minWidth="0.0" prefWidth="66.0" text="Id" />
+                                  <TableColumn fx:id="tbcNombre" maxWidth="1.7976931348623157E308" minWidth="266.0" prefWidth="-1.0" text="Nombre" />
+                                    <TableColumn fx:id="tbcEliminar" minWidth="0.0" prefWidth="108.0" text="Eliminar" />
+                                </columns>
+                                 <VBox.margin>
+                                    <Insets bottom="10.0" top="5.0" />
+                                 </VBox.margin>
+                              </TableView>
+                           </children>
+                           <padding>
+                              <Insets left="10.0" right="10.0" />
+                           </padding>
+                        </VBox>
+                  </content>
+                </Tab>
+              </tabs>
+            </TabPane>
+            
+            <HBox alignment="BOTTOM_CENTER" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" prefHeight="60.0" spacing="15.0">
+               <children>
+                  <MFXButton fx:id="btnNuevo" maxWidth="1.7976931348623157E308" onAction="#OnActionBtnNuevo" prefHeight="40.0" styleClass="mfx-button" text="Nuevo" HBox.hgrow="ALWAYS" />
+                  <MFXButton fx:id="btnBuscar" layoutX="10.0" layoutY="25.0" maxWidth="1.7976931348623157E308" onAction="#OnActionBtnBuscar" prefHeight="40.0" text="Buscar" HBox.hgrow="ALWAYS" />
+                  <MFXButton fx:id="btnEliminar" layoutX="656.0" layoutY="25.0" maxWidth="1.7976931348623157E308" onAction="#OnActionBtnEliminar" prefHeight="40.0" text="Eliminar" HBox.hgrow="ALWAYS" />
+                  <MFXButton fx:id="btnGuardar" layoutX="587.0" layoutY="25.0" maxWidth="1.7976931348623157E308" onAction="#OnActionBtnGuardar" prefHeight="40.0" text="Guardar" HBox.hgrow="ALWAYS" />
+               </children>
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+               <padding>
+                  <Insets bottom="5.0" />
+               </padding>
+            </HBox>
+         </children>
+         <padding>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+         </padding>
+      </VBox>
+   </children>
+</AnchorPane>

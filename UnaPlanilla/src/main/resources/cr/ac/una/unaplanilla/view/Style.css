@@ -1,0 +1,53 @@
+/*
+ * Empty Stylesheet file.
+ */
+
+
+
+.img-viewEfecto{
+    -fx-effect: dropshadow(gaussian, rgba(255, 255, 255, 1), 10, 0.5, 0.0, 0.0);
+}
+
+.mfx-btnimg-ltveliminar{
+    -fx-opacity: 0.8;
+    -fx-background-color: #ff0000;
+    -fx-background-repeat: no-repeat;
+    -fx-background-position: center;
+    -fx-background-size: contain;
+    -fx-background-color:transparent;
+    -fx-background-image: url("../resources/media/Eliminar-48.png")
+}
+
+.mfx-button{
+
+    -fx-background-color: #999999;
+    -fx-background-radius: 10px;
+
+    -fx-border-color: #000000;
+    -fx-border-radius: 10 10 10 10;
+    -fx-opacity: 0.87;
+
+    -mfx-button-type: RAISED;
+    -fx-text-fill: #000000;
+
+    -fx-font: 16px "calibri";
+    -fx-alignment:CENTER;
+
+}
+
+.mfx-button2{
+
+    -fx-background-color: #FFFFFF;
+    -fx-background-radius: 10px;
+
+    -fx-border-color: #000000;
+    -fx-border-radius: 10 10 10 10;
+    -fx-opacity: 0.87;
+
+    -mfx-button-type: RAISED;
+    -fx-text-fill: #000000;
+
+    -fx-font: 12px "calibri";
+    -fx-alignment:CENTER;
+
+}

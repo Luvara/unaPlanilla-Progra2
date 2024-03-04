@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import io.github.palexdev.materialfx.controls.MFXButton?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane fx:id="root" minHeight="-Infinity" minWidth="-Infinity" prefHeight="470.0" prefWidth="800.0" stylesheets="@Style.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cr.ac.una.unaplanilla.controller.PrincipalViewController">
+   <top>
+      <HBox alignment="CENTER" minHeight="-Infinity" minWidth="-Infinity" prefHeight="70.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <children>
+            <Label text="UNA PLANILLA" />
+         </children>
+      </HBox>
+   </top>
+   <left>
+      <VBox minHeight="-Infinity" minWidth="-Infinity" prefHeight="200.0" prefWidth="160.0" spacing="10.0" BorderPane.alignment="CENTER">
+         <children>
+            <MFXButton fx:id="btnEmpleados" buttonType="RAISED" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" onAction="#onActionBtnEmpleados" prefHeight="40.0" prefWidth="150.0" text="Empleados" />
+            <MFXButton fx:id="btnTiposPlanilla" buttonType="RAISED" layoutX="10.0" layoutY="10.0" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" onAction="#onActionBtnTiposPlanilla" prefHeight="40.0" prefWidth="150.0" text="Tipos Planilla" />
+            <MFXButton fx:id="btnSalir" buttonType="RAISED" layoutX="10.0" layoutY="50.0" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" onAction="#onActionBtnSalir" prefHeight="40.0" prefWidth="150.0" text="Salir" />
+         </children>
+         <padding>
+            <Insets left="5.0" right="5.0" top="5.0" />
+         </padding>
+      </VBox>
+   </left>
+   <center>
+      <VBox alignment="CENTER" prefHeight="400.0" prefWidth="600.0" BorderPane.alignment="CENTER">
+         <children>
+         </children></VBox>
+   </center>
+</BorderPane>
